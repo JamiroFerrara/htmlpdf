@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
+  padding-bottom: 10rem;
   padding: 0;
-  background-color: #FAFAFA;
   font: 12pt "Tahoma";
 }
 
@@ -19,8 +19,8 @@ body {
   margin: 0;
   width: 21cm;
   min-height: 29.7cm;
-  padding: 1cm;
   margin: 1cm auto;
+  padding: 1cm;
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
   background: white;
@@ -28,8 +28,9 @@ body {
 }
 
 .subpage {
+  border: 1px solid gray;
   padding: 1cm;
-  height: 280mm;
+  height: 260mm;
   border: 1px #d1d1d1 solid;
 }
 
@@ -41,9 +42,10 @@ body {
 @media print {
   html, body {
     width: 210mm;
-    height: 297mm;
+    height: 80%;
+    -webkit-print-color-adjust: exact;
   }
-  .page {
+  .page{
     margin: 0;
     border: initial;
     border-radius: initial;
@@ -53,4 +55,22 @@ body {
     background: initial;
     page-break-after: always;
   }
+
+  .header, .header-space,
+  .footer, .footer-space {
+    height: 100px;
+  }.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }
+
+.page {
+  page-break-after: always;
+}
+
