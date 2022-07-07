@@ -20,7 +20,7 @@ body {
   width: 21cm;
   min-height: 29.7cm;
   margin: 1cm auto;
-  padding: 1cm;
+  padding: 40px;
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
   background: white;
@@ -28,10 +28,8 @@ body {
 }
 
 .subpage {
-  border: 1px solid gray;
   padding: 1cm;
-  height: 260mm;
-  border: 1px #d1d1d1 solid;
+  height: 220mm;
 }
 
 @page {
@@ -54,23 +52,36 @@ body {
     box-shadow: initial;
     background: initial;
     page-break-after: always;
+    page-break-before: always;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .element{
+    page-break-inside: avoid;
   }
 
   .header, .header-space,
   .footer, .footer-space {
     height: 100px;
+    -webkit-print-color-adjust: exact;
   }.header {
     position: fixed;
     top: 0;
     width: 100%;
+    -webkit-print-color-adjust: exact;
   }.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    -webkit-print-color-adjust: exact;
   }
+}
+
+.element {
+  border: 1px black solid;
+  padding: 2px;
 }
 
 .page {
   page-break-after: always;
 }
-
