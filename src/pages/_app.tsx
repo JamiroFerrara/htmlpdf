@@ -1,11 +1,18 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import Layout from '../components/layout/layout'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function SafeHydrate( children ) {
+  return (
+    <div suppressHydrationWarning>
+      {children}
+    </div>
+  )
+}
+
+function MyApp({ Component, pageProps }) {
   return(
     <Layout>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Layout>
   )
 }

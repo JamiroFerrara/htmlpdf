@@ -7,7 +7,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <>
+    <div suppressHydrationWarning>
       <table className="w-full">
         <thead>
           <tr>
@@ -45,7 +45,7 @@ const Layout: FC<Props> = ({ children }) => {
       <div className="footer">
         <div className='h-full text-center bg-white'>Footer</div>
       </div>
-    </>
+    </div>
   )
 }
 

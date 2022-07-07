@@ -5,6 +5,8 @@ import Title from "../components/text/Title";
 import ReferenteTable from '../components/tables/ReferenteTable'
 import { useRouter } from 'next/router'
 import {Center} from '@mantine/core'
+import A4 from '../components/layout/a4'
+import Introduction from '../components/blocks/introduction'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -13,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="border relative border-black py-8 h-[52rem] overflow-hidden">
+      <A4 border={true}>
         <Center className="flex flex-col">
           <Title>PREVENTIVO PER LA REALIZZAZIONE DI UN IMPIANTO FOTOVOLTAICO DA 60,8 KWP</Title>
           <div className="h-8"></div>
@@ -32,7 +34,18 @@ const Home: NextPage = () => {
           <Paragraph>- Schede tecniche dei materiali proposti</Paragraph>
           <ReferenteTable date={currentdate.toLocaleDateString()} referente="Giorgio Bodei" email="giorgio.bodei@tecnoace.eu" phone={3409654059}/>
         </Center>
+      </A4>
+
+      <A4 border={false}>
+        <Introduction/>
+      </A4>
+
+      <div className="element">
+        <Center className="flex flex-col ">
+          <img src="/impianto.png" alt=""/>
+        </Center>
       </div>
+
     </>
   );
 };
