@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useRef } from 'react'
 import Header  from './header'
 
 interface Props {
@@ -6,6 +6,8 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children }) => {
+  var currentdate = new Date();
+
   return (
     <div suppressHydrationWarning>
       <table className="w-full">
@@ -16,10 +18,6 @@ const Layout: FC<Props> = ({ children }) => {
             </td>
           </tr>
         </thead>
-
-      <div className="header">
-          <Header/>
-      </div>
 
         <tbody>
           <tr>
@@ -41,6 +39,9 @@ const Layout: FC<Props> = ({ children }) => {
         </tfoot>
       </table>
 
+      <div className="header">
+          <Header/>
+      </div>
 
       <div className="footer">
         <div className='h-full text-center bg-white'>Footer</div>

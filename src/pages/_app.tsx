@@ -1,15 +1,7 @@
 import "../styles/globals.css";
 import Layout from '../components/layout/layout'
 
-function SafeHydrate( children ) {
-  return (
-    <div suppressHydrationWarning>
-      {children}
-    </div>
-  )
-}
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps } : any) {
   return(
     <Layout>
         <Component {...pageProps} />

@@ -73,8 +73,13 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    visibility: visible;
     -webkit-print-color-adjust: exact;
   }
+}
+
+.footer {
+  visibility: hidden;
 }
 
 .element {
