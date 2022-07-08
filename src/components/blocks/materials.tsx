@@ -26,9 +26,6 @@ export default function Materials() {
       <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
       <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
       <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
       <MaterialTotal title="Importo totale (IVA esclusa)" total={"€ 51.000,00"}/>
       <MaterialTotal title="Importo al kW (IVA esclusa)" total={"€/kWp 838,16"}/>
     </>
@@ -84,10 +81,10 @@ export function MaterialTotal(props: totalProps){
 
   return (
     <div contentEditable className="gridItem flex bg-blue-500 text-white text-xl font-extrabold">
-      <div className="w-8/12 border-black border-r-[1px] p-4 flex flex-col justify-center">
+      <div className="w-8/12 border-black border-r-[1px] p-4 ">
         {title}
       </div>
-      <div className="w-4/12 border-black border-r-[1px] p-4 flex flex-col justify-center">
+      <div className="w-4/12 border-black border-r-[1px] p-4 ">
         {total}
       </div>
     </div>

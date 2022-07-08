@@ -35,7 +35,9 @@ body {
 @page {
   size: A4;
   margin: 0;
+
 }
+
 
 @media print {
   html, body {
@@ -55,7 +57,7 @@ body {
     page-break-before: always;
     -webkit-print-color-adjust: exact;
   }
-
+  
   .element, .gridItem, .gridElement{
     page-break-inside: avoid;
   }
@@ -93,6 +95,7 @@ body {
 
 .footer {
   visibility: visible;
+  content: counter(page);
 }
 
 .element {

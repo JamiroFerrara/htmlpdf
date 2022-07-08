@@ -17,7 +17,11 @@ const Home: NextPage = () => {
 
       <Materials/>
 
-      <Image src="/impianto.png"/>
+      <div className="element">
+        <Image src="/impianto.png"/>
+        <Image src="/impianto.png"/>
+        <Image src="/impianto.png"/>
+      </div>
 
     </>
   );

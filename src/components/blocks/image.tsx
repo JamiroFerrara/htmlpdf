@@ -10,7 +10,7 @@ export default function Image(props:Props){
   return (
     <div className="element">
       <Center className="flex flex-col ">
-        <img src={src} alt=""/>
+        <img className='h-[17rem]' src={src} alt=""/>
       </Center>
     </div>
   )
