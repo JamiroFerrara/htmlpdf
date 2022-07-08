@@ -3,17 +3,22 @@ import Tooltip from "./Tooltip";
 
 interface Props {
   children?: React.ReactNode;
+  center?: boolean;
+  bold?: boolean;
 }
 
 export default function Paragraph(props:Props) {
-  const {children} = props
-  const [Bold, setBold] = useState(false);
+  const {children, center, bold} = props
+  const [Bold, setBold] = useState(bold);
   const [TooltipVisible, setTooltipVisible] = useState(false);
   let isToolTipHovered = false;
 
   return (
     <div
-      className="flex relative flex-row w-full justify-center"
+      className={`
+      ${center ? "justify-center" : "ml-10"} 
+      flex relative flex-row w-full`}
+
       onMouseEnter={() => setTooltipVisible(true)}
       onMouseLeave={() => (isToolTipHovered ? "" : setTooltipVisible(false))}
     >
@@ -21,7 +26,7 @@ export default function Paragraph(props:Props) {
         contentEditable="true"
         className={`
         ${Bold ? "font-extrabold" : ""} 
-        pb-4 text-center`}
+        pb-4`}
       >
         {children} 
       </div>

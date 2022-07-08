@@ -60,9 +60,22 @@ body {
     page-break-inside: avoid;
   }
 
-  .header, .header-space,
-  .footer, .footer-space {
-    height: 100px;
+  .break{
+    page-break-inside:initial;
+  }
+
+  .header-space {
+    height: 106px;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .footer, .footer-space{
+      height: 94px;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .header {
+    height: 106px;
     -webkit-print-color-adjust: exact;
   }.header {
     position: fixed;

@@ -40,11 +40,12 @@ const Layout: FC<Props> = ({ children }) => {
       </table>
 
       <div className="header">
-          <Header/>
+        <Header/>
       </div>
 
       <div className="footer">
-        <div className='h-full text-center bg-white'>Footer</div>
+        <div className='h-4'></div>
+        <div className='h-full text-right bg-white pr-10'>Tecnoace S.R.L</div>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 interface Props{
   isVisible: boolean
   setBold: any
-  Bold: boolean
+  Bold?: boolean
 }
 
 export default function Tooltip(props:Props){

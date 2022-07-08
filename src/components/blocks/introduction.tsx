@@ -3,7 +3,7 @@ import A4 from '../layout/a4'
 export default function Introduction(){
   return (
     <>
-      <A4 border={true}>
+      <A4 border={false}>
         <div className='h-4'></div>
         <div contentEditable={true} className="">Ringraziandola per l’interesse dimostrato nei confronti della nostra azienda, siamo di seguito a formularle un’offerta per un impianto fotovoltaico, ed il relativo piano economico.</div>
         <div className='h-4'></div>
