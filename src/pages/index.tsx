@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from 'next/router'
-import {Center} from '@mantine/core'
-import A4 from '../components/layout/a4'
 import Landing from '../components/blocks/landing'
 import Introduction from '../components/blocks/introduction'
 import Image from '../components/blocks/image'
+import Materials from '../components/blocks/materials'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -15,6 +14,8 @@ const Home: NextPage = () => {
       <Landing/>
 
       <Introduction/>
+
+      <Materials/>
 
       <Image src="/impianto.png"/>
 
