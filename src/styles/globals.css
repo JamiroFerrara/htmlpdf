@@ -79,7 +79,7 @@ body {
 }
 
 .footer {
-  visibility: hidden;
+  visibility: visible;
 }
 
 .element {

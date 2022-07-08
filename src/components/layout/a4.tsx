@@ -9,7 +9,7 @@ export default function A4(props:Props){
   return (
       <div className={`
         ${border ? "border" : ""} 
-        relative border-black pt-8 h-[55rem] overflow-hidden`}
+        relative border-black pt-8 h-[55rem] overflow-hidden element`}
       >
         {children}
       </div>
