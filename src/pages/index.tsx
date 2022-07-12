@@ -5,16 +5,33 @@ import Introduction from '../components/blocks/introduction'
 import Image from '../components/blocks/image'
 import Materials from '../components/blocks/materials'
 import * as sr from '../server/signalr'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home: NextPage = () => {
+  const [Content, setContent] = useState(null)
   const router = useRouter()
-  // console.log(router.query);
+  const {id} = router.query;
+
+  useEffect(()=> {
+    const getContent = async () => {
+      if (id){
+        let res = await fetch("http://localhost:3000/api/getOfferFromCode?id=" + id);
+        const data = await res.json();
+        setContent(data.offers);
+        console.log(id);
+        console.log(data.offers);
+      }
+    }
+    getContent();
+  }, [id])
+
+  if (!Content){
+      return <div className="flex justify-center w-full h-full">LOADING..</div>
+  }
 
   return (
     <>
-      <button onClick={() => init()} className="border rounded p-4 border-2 border-black hover:scale-105 transition w-full mb-8">Connect SignalR!</button>
-      <Landing/>
+      <Landing address={Content.client.address}/>
 
       <Introduction/>
 
@@ -38,3 +55,4 @@ const init = async () => {
   // var res = await sr.GetOffers();
   // console.log(res);
 }
+

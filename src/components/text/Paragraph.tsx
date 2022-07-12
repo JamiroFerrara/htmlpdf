@@ -5,10 +5,11 @@ interface Props {
   children?: React.ReactNode;
   center?: boolean;
   bold?: boolean;
+  uppercase?: boolean;
 }
 
 export default function Paragraph(props:Props) {
-  const {children, center, bold} = props
+  const {children, center, bold, uppercase} = props
   const [Bold, setBold] = useState(bold);
   const [TooltipVisible, setTooltipVisible] = useState(false);
   let isToolTipHovered = false;
@@ -26,6 +27,7 @@ export default function Paragraph(props:Props) {
         contentEditable="true"
         className={`
         ${Bold ? "font-extrabold" : ""} 
+        ${uppercase ? "uppercase" : ""} 
         pb-4`}
       >
         {children} 

@@ -4,7 +4,12 @@ import ReferenteTable from '../../components/tables/ReferenteTable'
 import A4 from '../layout/a4'
 import {Center} from '@mantine/core'
 
-export default function Landing(){
+interface Props {
+    address: string
+}
+
+export default function Landing(props:Props){
+  const {address} = props
   var currentdate = new Date();
 
   return (
@@ -14,7 +19,7 @@ export default function Landing(){
           <div className="h-8"></div>
           <Title>PREVENTIVO PER LA REALIZZAZIONE DI UN IMPIANTO FOTOVOLTAICO DA 60,8 KWP</Title>
           <div className="h-6"></div>
-          <Paragraph center={true}>SITO IN VIA TREPONTI, 49A ROCCAFRANCA(BS)</Paragraph>
+          <Paragraph uppercase={true} center={true}>SITO IN: {address}</Paragraph>
           <div className="h-6"></div>
           <Title>COMMITTENTE</Title>
           <div className="h-6"></div>

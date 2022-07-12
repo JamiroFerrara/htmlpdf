@@ -25,8 +25,8 @@ export async function InitConnection(){
   }
 }
 
-export async function GetOfferFromCode() : Promise<any>{
-  const res = await connection.invoke("GetOfferFromCode", "25")
+export async function GetOfferFromCode(code: string) : Promise<any>{
+  const res = await connection.invoke("GetOfferFromCode", code)
   return res;
 }
 
