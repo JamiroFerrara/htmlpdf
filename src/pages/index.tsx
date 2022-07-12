@@ -11,6 +11,7 @@ const Home: NextPage = () => {
   const [Content, setContent] = useState(null)
   const router = useRouter()
   const {id} = router.query;
+  // const id = "MC_F_20220627_01_REV01"
 
   useEffect(()=> {
     const getContent = async () => {
