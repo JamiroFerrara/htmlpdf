@@ -18,14 +18,16 @@ export default function Materials() {
       <div className="text-xl font-extrabold underline text-blue-900">OFFERTA ECONOMICA SOLUZIONE 1:</div>
       <div className="h-4"></div>
       <MaterialHeader />
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima asdfasdf"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
+      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
       <MaterialTotal title="Importo totale (IVA esclusa)" total={"€ 51.000,00"}/>
       <MaterialTotal title="Importo al kW (IVA esclusa)" total={"€/kWp 838,16"}/>
     </>
