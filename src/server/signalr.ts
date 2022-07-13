@@ -1,4 +1,4 @@
-import { HubConnectionBuilder, LogLevel, HttpTransportType } from '@microsoft/signalr';
+import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 
 let connection: any;
 
@@ -11,9 +11,7 @@ export async function InitConnection(){
 
   try {
     connection = new HubConnectionBuilder()
-      .withUrl(url, {
-        transport: HttpTransportType.LongPolling
-      })
+      .withUrl(url)
       .configureLogging(LogLevel.Information)
       .build();
 
