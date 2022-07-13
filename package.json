@@ -11,7 +11,7 @@
   "dependencies": {
     "@mantine/core": "^4.2.12",
     "@mantine/hooks": "^4.2.12",
-    "@microsoft/signalr": "^6.0.6",
+    "@microsoft/signalr": "^7.0.0-preview.6.22330.3",
     "cors": "^2.8.5",
     "next": "12.2.0",
     "react": "18.2.0",
