@@ -12,8 +12,7 @@ export async function InitConnection(){
   try {
     connection = new HubConnectionBuilder()
       .withUrl(url, {
-      skipNegotiation: true,
-      transport: HttpTransportType.WebSockets
+        skipNegotiation: true
       })
       .configureLogging(LogLevel.Information)
       .build();
