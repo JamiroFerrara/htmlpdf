@@ -1,10 +1,6 @@
-module.exports = {
-    async rewrites() {
-        return [
-          {
-            source: '/api/:path*',
-            destination: 'https://signalr.tecnoace.eu:15191/:path*',
-          },
-        ]
-      },
-  };
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+}
+
+module.exports = nextConfig
