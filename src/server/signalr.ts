@@ -1,4 +1,4 @@
-import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { HubConnectionBuilder, LogLevel, HttpTransportType } from '@microsoft/signalr';
 
 let connection: any;
 
@@ -11,7 +11,10 @@ export async function InitConnection(){
 
   try {
     connection = new HubConnectionBuilder()
-      .withUrl(url)
+      .withUrl(url, {
+      skipNegotiation: true,
+      transport: HttpTransportType.WebSockets
+      })
       .configureLogging(LogLevel.Information)
       .build();
 
