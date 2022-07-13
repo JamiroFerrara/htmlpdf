@@ -1,4 +1,6 @@
 import * as sr from '../../server/signalr'
+const eventsource = require('eventsource');
+const ws = require('ws');
 
 export default async function handler(req, res) {
   await sr.InitConnection();

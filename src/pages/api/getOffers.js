@@ -1,6 +1,6 @@
 import * as sr from '../../server/signalr'
-const ws = require('ws');
 const eventsource = require('eventsource');
+const ws = require('ws');
 
 export default async function handler(req, res) {
   console.log("getOffersLog!")
