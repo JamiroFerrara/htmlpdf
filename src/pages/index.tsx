@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   useEffect(()=> {
     const getContent = async () => {
       if (id){
-        let res = await fetch("http://localhost:3000/api/getOfferFromCode?id=" + id);
+        let res = await fetch("https://htmlpdf.vercel.app/api/getOfferFromCode?id=" + id);
         const data = await res.json();
         setContent(data.offers);
         console.log(id);
