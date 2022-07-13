@@ -1,5 +1,6 @@
 import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 const ws = require('ws');
+const eventsource = require('eventsource');
 
 let connection;
 
