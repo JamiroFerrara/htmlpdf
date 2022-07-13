@@ -3,7 +3,7 @@ import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 let connection: any;
 
 export async function InitConnection(){
-  const ip = "62.97.53.203"
+  const ip = "signalr.tecnoace.eu"
   // const iIp = "192.168.11.54"
   const port = "15191"
   const hub  = "Tecnoace_Report"
