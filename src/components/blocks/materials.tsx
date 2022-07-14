@@ -22,7 +22,7 @@ export default function Materials(offer:Offer) {
       <MaterialHeader />
 
       {offer.materialList.map((material, key) => (
-        <MaterialItem pos={key} art="panel" title={material.description} desc={[material.extendedDescription]} qty={material.qty}/>
+        <MaterialItem key={key} pos={key} art="panel" title={material.description} desc={[material.extendedDescription]} qty={material.qty}/>
       ))}
 
       <MaterialTotal title="Importo totale (IVA esclusa)" total={"€ " + offer.priceNoTax + ",00"}/>
