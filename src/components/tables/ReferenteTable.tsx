@@ -1,15 +1,7 @@
 import { Grid, Center } from "@mantine/core";
+import {Offer} from '../../models/offer'
 
-interface Props {
-  date?: string;
-  referente?: string;
-  phone?: number;
-  email?: string;
-}
-
-export default function ReferenteTable(props: Props) {
-  const { date, referente, phone, email } = props;
-
+export default function ReferenteTable(offer:Offer) {
   return (
     <Center className="mt-2">
       <Grid className="justify-center w-[50rem]">
@@ -20,13 +12,15 @@ export default function ReferenteTable(props: Props) {
           REFERENTE
         </Grid.Col>
         <Grid.Col className="border border-black text-center border-b-2 border-l-2" span={5} >
-          {date}
+          <div className="flex flex-col justify-center align-middle h-full">
+            {offer.date.toString()}
+          </div>
         </Grid.Col>
         <Grid.Col className="border border-black text-center border-b-2 border-r-2" span={5} >
           <div className="flex flex-col">
-            <div contentEditable={true}>{referente}</div>
-            <div contentEditable={true}>Cell. {phone}</div>
-            <div contentEditable={true}>E-mail: {email}</div>
+            <div contentEditable={true}>{offer.responsable.name}</div>
+            <div contentEditable={true}>Cell. {offer.responsable.cell}</div>
+            <div contentEditable={true}>E-mail: {offer.responsable.mail}</div>
           </div>
         </Grid.Col>
       </Grid>

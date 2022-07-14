@@ -1,59 +1,64 @@
 import type { NextPage } from "next";
-import { useRouter } from 'next/router'
-import Landing from '../components/blocks/landing'
-import Introduction from '../components/blocks/introduction'
-import Image from '../components/blocks/image'
-import Materials from '../components/blocks/materials'
-import * as sr from '../server/signalr'
-import { useEffect, useState } from 'react'
+import { useRouter } from "next/router";
+import Landing from "../components/blocks/landing";
+import Introduction from "../components/blocks/introduction";
+import Image from "../components/blocks/image";
+import Materials from "../components/blocks/materials";
+import * as sr from "../server/signalr";
+import { useEffect, useState } from "react";
+import {Offer} from  '../models/offer'
 
 const Home: NextPage = () => {
-  const [Content, setContent] = useState(null)
-  const router = useRouter()
+  const [Content, setContent] = useState<Offer>(null);
+  const router = useRouter();
   const {id} = router.query;
-  // const id = "MC_F_20220627_01_REV01"
+  // const id = "MC_F_20220627_01_REV01";
+  const url = "https://htmlpdf.vercel.app"
+  // const url = "http://localhost:3000";
+  const method = "/api/getOfferFromCode?id=";
+  const fullUrl = url + method + id
 
-  useEffect(()=> {
+  useEffect(() => {
     const getContent = async () => {
-      if (id){
-        let res = await fetch("https://htmlpdf.vercel.app/api/getOfferFromCode?id=" + id);
-        const data = await res.json();
-        setContent(data.offers);
-        console.log(id);
-        console.log(data.offers);
+      if (id) {
+        let offer = await getOffersFromCode(fullUrl)
+        setContent(offer.offers);
+        console.log(offer.offers);
       }
-    }
+    };
     getContent();
-  }, [id])
+  }, [id]);
 
-  if (!Content){
-      return <div className="flex justify-center w-full h-full">LOADING..</div>
+  if (!Content) {
+    return <div className="flex justify-center w-full h-full">LOADING..</div>;
   }
 
   return (
     <>
-      <Landing address={Content.client.address}/>
+      <Landing {...Content}/>
 
-      <Introduction/>
+      <Introduction />
 
-      <Materials/>
+      <Materials {...Content}/>
 
       <div className="element">
-        <Image src="/impianto.png"/>
-        <Image src="/impianto.png"/>
-        <Image src="/impianto.png"/>
+        <Image src="/impianto.png" />
+        <Image src="/impianto.png" />
+        <Image src="/impianto.png" />
       </div>
-
     </>
   );
 };
 
 export default Home;
 
-const init = async () => {
-  console.log("Initializing connection...");
-  await sr.InitConnection();
-  // var res = await sr.GetOffers();
-  // console.log(res);
-}
+async function getOffersFromCode(url: string) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText)
+      }
+      return response.json()
+    })
 
+}

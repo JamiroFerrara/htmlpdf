@@ -1,5 +1,7 @@
+import {Offer} from '../../models/offer'
+
 interface itemProps {
-  pos?: string;
+  pos?: number;
   art?: any;
   title?: string;
   desc?: string[];
@@ -11,25 +13,20 @@ interface totalProps{
   total: string;
 }
 
-export default function Materials() {
+export default function Materials(offer:Offer) {
   return (
     <>
       <div className="h-4"></div>
       <div className="text-xl font-extrabold underline text-blue-900">OFFERTA ECONOMICA SOLUZIONE 1:</div>
       <div className="h-4"></div>
       <MaterialHeader />
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialItem pos="1" art="panel" title="Content" desc={["Tensione massima"]} qty={160}/>
-      <MaterialTotal title="Importo totale (IVA esclusa)" total={"€ 51.000,00"}/>
-      <MaterialTotal title="Importo al kW (IVA esclusa)" total={"€/kWp 838,16"}/>
+
+      {offer.materialList.map((material, key) => (
+        <MaterialItem pos={key} art="panel" title={material.description} desc={[material.extendedDescription]} qty={material.qty}/>
+      ))}
+
+      <MaterialTotal title="Importo totale (IVA esclusa)" total={"€ " + offer.priceNoTax + ",00"}/>
+      <MaterialTotal title="Importo al kW (IVA esclusa)" total={"€/kWp " + (offer.priceNoTax / offer.plantPower).toFixed(2)}/>
     </>
   );
 }
@@ -43,7 +40,7 @@ export function MaterialItem(props: itemProps) {
         {pos}
       </div>
       <div className="w-3/12 border-black border-r-[1px] p-2 flex flex-col justify-center">
-        <img className="min-h-32 min-w-32" src="https://www.itrisorse.it/wp-content/uploads/2020/01/shop_07-1.jpg"></img>
+        {/* <img className="min-h-32 min-w-32" src="https://www.itrisorse.it/wp-content/uploads/2020/01/shop_07-1.jpg"></img> */}
       </div>
       <div className="w-6/12 border-black p-2 justify-center text-left m-auto">
         <div className="font-extrabold">{title}:</div>
