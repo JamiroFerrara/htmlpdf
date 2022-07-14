@@ -13,7 +13,7 @@ export default function Landing(offer:Offer){
       <A4 border={true}>
         <Center className="flex flex-col">
           <div className="h-8"></div>
-          <Title>PREVENTIVO PER LA REALIZZAZIONE DI UN IMPIANTO FOTOVOLTAICO DA 60,8 KWP</Title>
+          <Title>PREVENTIVO PER LA REALIZZAZIONE DI UN IMPIANTO FOTOVOLTAICO DA {offer.plantPower} KWP</Title>
           <div className="h-6"></div>
           <Paragraph uppercase={true} center={true}>SITO IN: {offer.plantAddress}</Paragraph>
           <div className="h-6"></div>
